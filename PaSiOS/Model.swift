@@ -5,3 +5,9 @@ struct Port: Codable {
     var latitude, longitude: Double
     var surveyors: [Int]
 }
+
+struct Surveyor: Codable {
+    var id: Int
+    var name: String
+    var contacts, prices: [String]
+}
