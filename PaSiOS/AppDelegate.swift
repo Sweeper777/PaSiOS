@@ -1,12 +1,5 @@
-//
-//  AppDelegate.swift
-//  PaSiOS
-//
-//  Created by Mulang Su on 2018/09/30.
-//  Copyright © 2018年 Mulang Su. All rights reserved.
-//
-
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        GMSServices.provideAPIKey(googleMapsKey)
         return true
     }
 
