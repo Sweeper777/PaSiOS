@@ -6,9 +6,5 @@ target 'PaSiOS' do
   use_frameworks!
 
   pod 'GoogleMaps'
-  pod 'Realm'
-  pod 'RealmSwift'
-  pod 'SCLAlertView'
-  pod 'TCTableViewSearchController'
   pod 'Alamofire'
 end
