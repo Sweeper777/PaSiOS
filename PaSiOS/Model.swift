@@ -22,6 +22,13 @@ struct Port: Codable {
     var name: String
     var latitude, longitude: Double
     var surveyors: [Int]
+    
+    init() {
+        name = ""
+        latitude = 0
+        longitude = 0
+        surveyors = []
+    }
 }
 
 struct Surveyor: Codable {
