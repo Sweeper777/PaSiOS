@@ -16,3 +16,11 @@ func downloadData(completion: @escaping (PortsAndSurveyorsData?) -> Void) {
         completion(pasData)
     }
 }
+
+func loadCache() -> PortsAndSurveyorsData? {
+    guard let data = UserDefaults.standard.data(forKey: "cache") else {
+        return nil
+    }
+    let decoder = JSONDecoder()
+    return try? decoder.decode(PortsAndSurveyorsData.self, from: data)
+}
