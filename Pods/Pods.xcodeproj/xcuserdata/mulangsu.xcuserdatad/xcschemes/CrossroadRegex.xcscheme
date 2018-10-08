@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "746919E2C5BEC110CD5ABD3422DC7CB2"
-               BuildableName = "Pods_PaSiOS.framework"
-               BlueprintName = "Pods-PaSiOS"
+               BlueprintIdentifier = "EBB84F600CACD509A93506981B02DBCF"
+               BuildableName = "Regex.framework"
+               BlueprintName = "CrossroadRegex"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "746919E2C5BEC110CD5ABD3422DC7CB2"
-            BuildableName = "Pods_PaSiOS.framework"
-            BlueprintName = "Pods-PaSiOS"
+            BlueprintIdentifier = "EBB84F600CACD509A93506981B02DBCF"
+            BuildableName = "Regex.framework"
+            BlueprintName = "CrossroadRegex"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

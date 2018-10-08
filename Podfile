@@ -7,4 +7,6 @@ target 'PaSiOS' do
 
   pod 'GoogleMaps'
   pod 'Alamofire'
+  pod 'CrossroadRegex'
+  pod 'SCLAlertView'
 end
