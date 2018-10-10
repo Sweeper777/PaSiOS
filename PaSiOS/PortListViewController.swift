@@ -48,6 +48,14 @@ class PortsListViewController: UITableViewController {
             }
         }
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.searchBar.text != "" && searchController.searchBar.text != nil {
+            return filteredPorts.count
+        } else {
+            return ports.count
+        }
+    }
 }
 
 extension PortsListViewController : UISearchResultsUpdating {
