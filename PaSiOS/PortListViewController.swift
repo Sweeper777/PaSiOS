@@ -19,6 +19,10 @@ class PortsListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search"
+        searchController.dimsBackgroundDuringPresentation = false
+        
         if let data = loadCache() {
             self.data = data
         } else {
