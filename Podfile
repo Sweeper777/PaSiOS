@@ -9,4 +9,5 @@ target 'PaSiOS' do
   pod 'Alamofire'
   pod 'CrossroadRegex'
   pod 'SCLAlertView'
+  pod 'SwiftyUtils', :git => 'https://github.com/tbaranes/SwiftyUtils.git', :commit => '982bffaadf8e831e75d3444dfba56af4d3962224'
 end
