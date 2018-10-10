@@ -23,6 +23,17 @@ class PortsListViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search"
         searchController.dimsBackgroundDuringPresentation = false
         
+        if #available(iOS 11.0, *) {
+            self.navigationItem.searchController = searchController
+            searchController.searchBar.barStyle = .black
+            searchController.searchBar.tintColor = UIColor.white
+        } else {
+            searchController.searchBar.barTintColor = UIColor(red: 156 / 0xff, green: 223 / 0xff, blue: 154 / 0xff, alpha: 1.0)
+            searchController.searchBar.tintColor = UIColor.black
+            definesPresentationContext = true
+            self.tableView.tableHeaderView = searchController.searchBar
+        }
+        
         if let data = loadCache() {
             self.data = data
         } else {
