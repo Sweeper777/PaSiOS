@@ -33,3 +33,12 @@ class PortsListViewController: UITableViewController {
         }
     }
 }
+
+extension PortsListViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if searchController.searchBar.text != "" && searchController.searchBar.text != nil {
+            filteredPorts = ports.filter { $0.name.lowercased().contains(searchController.searchBar.text!.lowercased()) }
+        }
+        tableView.reloadData()
+    }
+}
