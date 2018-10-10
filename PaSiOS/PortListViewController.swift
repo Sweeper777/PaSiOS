@@ -4,6 +4,7 @@ import SCLAlertView
 
 class PortsListViewController: UITableViewController {
 
+    let searchController = UISearchController(searchResultsController: nil)
     
     var data: PortsAndSurveyorsData! {
         didSet {
