@@ -56,6 +56,16 @@ class PortsListViewController: UITableViewController {
             return ports.count
         }
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        if searchController.searchBar.text != "" && searchController.searchBar.text != nil {
+            cell.textLabel?.text = filteredPorts[indexPath.row].name
+        } else {
+            cell.textLabel?.text = ports[indexPath.row].name
+        }
+        return cell
+    }
 }
 
 extension PortsListViewController : UISearchResultsUpdating {
