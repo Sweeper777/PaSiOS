@@ -14,4 +14,10 @@ class MapViewController: UIViewController {
         return data?.ports ?? []
     }
     var markers: [GMSMarker] = []
+    override func viewDidLoad() {
+        mapView = GMSMapView()
+        mapView.setMinZoom(kGMSMinZoomLevel, maxZoom: 9)
+        view = mapView
+        
+    }
 }
