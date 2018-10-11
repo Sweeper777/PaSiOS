@@ -35,3 +35,9 @@ class MapViewController: UIViewController {
         }
     }
 }
+
+
+extension MapViewController : UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+    }
+}
