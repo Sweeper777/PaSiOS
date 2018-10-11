@@ -19,5 +19,19 @@ class MapViewController: UIViewController {
         mapView.setMinZoom(kGMSMinZoomLevel, maxZoom: 9)
         view = mapView
         
+        if let data = loadCache() {
+            self.data = data
+            reloadMarkers()
+        } else {
+            downloadData { [unowned self] (data) in
+                if let pasData = data {
+                    self.data = pasData
+                    self.reloadMarkers()
+                } else {
+                    let alert = SCLAlertView()
+                    alert.showError("Error", subTitle: "Unable to load data.")
+                }
+            }
+        }
     }
 }
