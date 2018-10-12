@@ -48,3 +48,6 @@ extension Port {
     }
 }
 
+fileprivate func search(byCoordinate coordinate: CLLocationCoordinate2D, allPorts: [Port]) -> [Port] {
+    return Array(allPorts.sorted { $0.coordinate.distance(from: coordinate) < $1.coordinate.distance(from: coordinate) }.prefix(10))
+}
