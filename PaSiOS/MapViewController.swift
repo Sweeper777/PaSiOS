@@ -52,6 +52,21 @@ class MapViewController: UIViewController {
         
         searchController.searchResultsUpdater = self
     }
+    
+    func reloadMarkers(searchLocation: CLLocationCoordinate2D? = nil) {
+        markers.forEach { $0.map = nil }
+        let dataSource = searchController.searchBar.text != nil && searchController.searchBar.text != "" ? filteredPorts : ports
+
+        markers = dataSource.map {
+            port in
+            let marker = GMSMarker()
+            marker.title = port.name
+            marker.position = CLLocationCoordinate2D(latitude: port.latitude, longitude: port.longitude)
+            marker.map = self.mapView
+            return marker
+        }
+        
+    }
 }
 
 
