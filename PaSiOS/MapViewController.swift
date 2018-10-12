@@ -42,6 +42,12 @@ class MapViewController: UIViewController {
         
         searchController.searchBar.barStyle = .black
         searchController.dimsBackgroundDuringPresentation = false
+        if #available(iOS 11.0, *) {
+            self.navigationItem.searchController = searchController
+        } else {
+            self.navigationItem.titleView = searchController.searchBar
+            searchController.hidesNavigationBarDuringPresentation = false
+        }
         searchController.searchBar.tintColor = .white
         
         searchController.searchResultsUpdater = self
