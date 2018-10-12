@@ -30,3 +30,14 @@ extension CLLocationDegrees {
         return self * (.pi / 180.0)
     }
 }
+
+extension CLLocationCoordinate2D {
+    func distance(from point: CLLocationCoordinate2D) -> Double {
+        let r = 6371.0
+        let dLat = (self.latitude - point.latitude).toRadians()
+        let dLng = (self.longitude - point.longitude).toRadians()
+        let a = pow(sin(dLat / 2), 2) + cos(self.latitude.toRadians()) * cos(point.latitude.toRadians()) * pow(sin(dLng / 2), 2)
+        let c = 2 * atan2(sqrt(a), sqrt(1 - a))
+        return r * c
+    }
+}
