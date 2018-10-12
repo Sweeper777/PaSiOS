@@ -39,6 +39,12 @@ class MapViewController: UIViewController {
                 }
             }
         }
+        
+        searchController.searchBar.barStyle = .black
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.tintColor = .white
+        
+        searchController.searchResultsUpdater = self
     }
 }
 
