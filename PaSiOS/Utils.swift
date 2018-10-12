@@ -24,3 +24,9 @@ func loadCache() -> PortsAndSurveyorsData? {
     let decoder = JSONDecoder()
     return try? decoder.decode(PortsAndSurveyorsData.self, from: data)
 }
+
+extension CLLocationDegrees {
+    func toRadians() -> Double {
+        return self * (.pi / 180.0)
+    }
+}
