@@ -80,5 +80,9 @@ class MapViewController: UIViewController {
 
 extension MapViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        var searchLocation: CLLocationCoordinate2D? = nil
+        if searchController.searchBar.text != nil && searchController.searchBar.text != "" {
+//            filteredPorts = ports.filter { $0.name.lowercased().contains(searchController.searchBar.text!.lowercased()) }
+            let searchResult = searchPorts(allPorts: ports, keywords: searchController.searchBar.text!)
     }
 }
