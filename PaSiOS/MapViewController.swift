@@ -66,6 +66,14 @@ class MapViewController: UIViewController {
             return marker
         }
         
+        if let loc = searchLocation {
+            let searchLocationMarker = GMSMarker()
+            searchLocationMarker.position = loc
+            searchLocationMarker.title = "Searched Location"
+            searchLocationMarker.icon = GMSMarker.markerImage(with: .green)
+            searchLocationMarker.map = self.mapView
+            markers.append(searchLocationMarker)
+        }
     }
 }
 
