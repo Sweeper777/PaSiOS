@@ -84,5 +84,14 @@ extension MapViewController : UISearchResultsUpdating {
         if searchController.searchBar.text != nil && searchController.searchBar.text != "" {
 //            filteredPorts = ports.filter { $0.name.lowercased().contains(searchController.searchBar.text!.lowercased()) }
             let searchResult = searchPorts(allPorts: ports, keywords: searchController.searchBar.text!)
+            filteredPorts = searchResult.ports
+            searchLocation = searchResult.cooridnate
+            if let firstPort = filteredPorts.first {
+                let cameraPosition = GMSCameraPosition(target: CLLocationCoordinate2D(latitude: firstPort.latitude, longitude: firstPort.longitude), zoom: mapView.camera.zoom, bearing: mapView.camera.bearing, viewingAngle: mapView.camera.viewingAngle)
+                mapView.animate(to: cameraPosition)
+            }
+        } else {
+            filteredPorts = []
+        }
     }
 }
