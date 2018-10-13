@@ -48,6 +48,18 @@ extension Port {
     }
 }
 
+func searchPorts(allPorts: [Port], keywords: String) -> (ports: [Port], cooridnate: CLLocationCoordinate2D?) {
+    if let match = "^(\\S+?)([NSns])\\s+(\\S+?)([WEwe])$".r?.findFirst(in: keywords),
+        let latitude = match.group(at: 1).map(Double.init) as? Double,
+        let longitude = match.group(at: 3).map(Double.init) as? Double {
+        let latSign = match.group(at: 2)!.lowercased() == "s" ? -1.0 : 1.0
+        let lngSign = match.group(at: 4)!.lowercased() == "w" ? -1.0 : 1.0
+        let coordinate = CLLocationCoordinate2D(latitude: latitude * latSign, longitude: longitude * lngSign)
+        return (search(byCoordinate: coordinate, allPorts: allPorts), coordinate)
+    }
+    return (allPorts.filter { $0.name.lowercased().contains(keywords.lowercased()) }, nil)
+}
+
 fileprivate func search(byCoordinate coordinate: CLLocationCoordinate2D, allPorts: [Port]) -> [Port] {
     return Array(allPorts.sorted { $0.coordinate.distance(from: coordinate) < $1.coordinate.distance(from: coordinate) }.prefix(10))
 }
