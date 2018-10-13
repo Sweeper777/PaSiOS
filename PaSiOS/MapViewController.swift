@@ -93,5 +93,6 @@ extension MapViewController : UISearchResultsUpdating {
         } else {
             filteredPorts = []
         }
+        reloadMarkers(searchLocation: searchLocation)
     }
 }
