@@ -15,4 +15,11 @@ class SurveyorListController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return surveyors.count
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
+        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.text = surveyors[indexPath.row].name
+        return cell
+    }
 }
