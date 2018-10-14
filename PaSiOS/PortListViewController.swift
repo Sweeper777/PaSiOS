@@ -75,6 +75,15 @@ class PortsListViewController: UITableViewController {
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? SurveyorListController,
+            let portName = (sender as? Port)?.name,
+            let surveyorIndices = (sender as? Port)?.surveyors {
+            vc.portName = portName
+            vc.surveyors = surveyorIndices.compactMap { data.surveyorsDictionary[$0] }
+        }
+    }
 }
 
 extension PortsListViewController : UISearchResultsUpdating {
