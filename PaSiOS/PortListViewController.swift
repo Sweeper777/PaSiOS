@@ -66,6 +66,15 @@ class PortsListViewController: UITableViewController {
         }
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if searchController.searchBar.text != "" && searchController.searchBar.text != nil {
+            performSegue(withIdentifier: "showSurveyors", sender: filteredPorts[indexPath.row])
+        } else {
+            performSegue(withIdentifier: "showSurveyors", sender: ports[indexPath.row])
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension PortsListViewController : UISearchResultsUpdating {
