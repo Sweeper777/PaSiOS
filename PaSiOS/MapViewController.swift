@@ -86,6 +86,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? SurveyorListController,
+            let port = sender as? Port {
+            vc.port = port
+            vc.surveyors = port.surveyors.compactMap { data.surveyors[$0] }
+            vc.showMapButton = false
+        }
+    }
 }
 
 
