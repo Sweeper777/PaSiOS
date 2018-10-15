@@ -64,6 +64,7 @@ class PortsListViewController: UITableViewController {
         } else {
             cell.textLabel?.text = ports[indexPath.row].name
         }
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
