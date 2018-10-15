@@ -124,10 +124,102 @@
                             <outlet property="delegate" destination="AM0-CU-SB3" id="zjQ-7Q-cBT"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="8hc-l9-0L1">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="RgQ-fP-q2O"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-world_map_filled" id="Wzp-g6-p2k">
+                            <connections>
+                                <action selector="showMap" destination="AM0-CU-SB3" id="8m0-Wb-kHt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="fsd-xJ-Iad" kind="show" identifier="showDetails" id="vnx-Tg-IDz"/>
+                        <segue destination="vOU-KN-b8o" kind="show" identifier="showMap" id="u4L-St-4Dm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ziA-br-ls5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="583" y="789"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="KGs-fd-7Of">
+            <objects>
+                <tableViewController title="Details" id="fsd-xJ-Iad" customClass="DetailsController" customModule="PaSiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="P8v-sX-tYs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Contact Details" id="FZS-iA-tcF">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="255" id="3f6-5Z-8oX">
+                                        <rect key="frame" x="0.0" y="55.5" width="320" height="255"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3f6-5Z-8oX" id="iMj-Ku-9Hv">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="254.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utX-Jg-1RE">
+                                                    <rect key="frame" x="16" y="11" width="288" height="233"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="utX-Jg-1RE" firstAttribute="trailing" secondItem="iMj-Ku-9Hv" secondAttribute="trailingMargin" id="Bfu-AH-XF2"/>
+                                                <constraint firstItem="utX-Jg-1RE" firstAttribute="bottom" secondItem="iMj-Ku-9Hv" secondAttribute="bottomMargin" id="CHj-gX-2ZD"/>
+                                                <constraint firstItem="utX-Jg-1RE" firstAttribute="top" secondItem="iMj-Ku-9Hv" secondAttribute="topMargin" id="ad1-XB-SlG"/>
+                                                <constraint firstItem="utX-Jg-1RE" firstAttribute="leading" secondItem="iMj-Ku-9Hv" secondAttribute="leadingMargin" id="wE3-xp-paq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Price Details" id="OtP-Dc-7j8">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="255" id="PjQ-au-RFZ">
+                                        <rect key="frame" x="0.0" y="366.5" width="320" height="255"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PjQ-au-RFZ" id="Ytq-LQ-9Rd">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="254.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jnn-zO-SJm">
+                                                    <rect key="frame" x="16" y="11" width="288" height="233"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="jnn-zO-SJm" firstAttribute="bottom" secondItem="Ytq-LQ-9Rd" secondAttribute="bottomMargin" id="ApX-Hn-lm2"/>
+                                                <constraint firstItem="jnn-zO-SJm" firstAttribute="leading" secondItem="Ytq-LQ-9Rd" secondAttribute="leadingMargin" id="Mjb-6y-e1d"/>
+                                                <constraint firstItem="jnn-zO-SJm" firstAttribute="top" secondItem="Ytq-LQ-9Rd" secondAttribute="topMargin" id="czc-dj-ohf"/>
+                                                <constraint firstItem="jnn-zO-SJm" firstAttribute="trailing" secondItem="Ytq-LQ-9Rd" secondAttribute="trailingMargin" id="ie5-lK-38z"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="fsd-xJ-Iad" id="uad-SZ-v9c"/>
+                            <outlet property="delegate" destination="fsd-xJ-Iad" id="Zc5-uP-s1R"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="contactTextView" destination="utX-Jg-1RE" id="d8w-26-La0"/>
+                        <outlet property="priceTextView" destination="jnn-zO-SJm" id="a7i-UR-A0c"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sb1-BH-yhh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1759" y="788"/>
         </scene>
         <!--Ports List-->
         <scene sceneID="4M4-bt-bJu">
@@ -168,6 +260,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K5C-ay-fnc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2578" y="790"/>
+        </scene>
+        <!--Single Port Map Controller-->
+        <scene sceneID="crw-n3-lnZ">
+            <objects>
+                <viewController id="vOU-KN-b8o" customClass="SinglePortMapController" customModule="PaSiOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yxe-Ux-ES2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uMG-y9-C0T"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yk7-St-pnN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1759" y="91"/>
         </scene>
     </scenes>
     <resources>
