@@ -2,7 +2,7 @@ import UIKit
 import GoogleMaps
 import SCLAlertView
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, GMSMapViewDelegate {
     var mapView: GMSMapView!
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -24,6 +24,8 @@ class MapViewController: UIViewController {
         mapView = GMSMapView()
         mapView.setMinZoom(kGMSMinZoomLevel, maxZoom: 9)
         view = mapView
+        mapView.delegate = self
+        
         
         if let data = loadCache() {
             self.data = data
