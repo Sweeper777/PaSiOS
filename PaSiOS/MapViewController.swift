@@ -77,6 +77,15 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             markers.append(searchLocationMarker)
         }
     }
+    
+    func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
+        guard marker.title != "Searched Location" else { return }
+        if let index = markers.firstIndex(of: marker) {
+            searchController.isActive = false
+            performSegue(withIdentifier: "showSurveyors", sender: ports[index])
+        }
+    }
+    
 }
 
 
