@@ -28,6 +28,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         view = mapView
         mapView.delegate = self
         
+        searchController.searchBar.delegate = self
         
         if let data = loadCache() {
             self.data = data
