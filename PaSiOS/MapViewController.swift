@@ -118,3 +118,10 @@ extension MapViewController : UISearchResultsUpdating {
         reloadMarkers(searchLocation: searchLocation)
     }
 }
+
+extension MapViewController : UISearchBarDelegate {
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.text = searchText
+    }
+}
