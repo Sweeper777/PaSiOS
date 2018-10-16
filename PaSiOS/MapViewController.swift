@@ -20,6 +20,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     var markers: [GMSMarker] = []
     
+    var searchText = ""
+    
     override func viewDidLoad() {
         mapView = GMSMapView()
         mapView.setMinZoom(kGMSMinZoomLevel, maxZoom: 9)
@@ -99,6 +101,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
 
 extension MapViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        searchText = searchController.searchBar.text ?? ""
         var searchLocation: CLLocationCoordinate2D? = nil
         if searchController.searchBar.text != nil && searchController.searchBar.text != "" {
 //            filteredPorts = ports.filter { $0.name.lowercased().contains(searchController.searchBar.text!.lowercased()) }
