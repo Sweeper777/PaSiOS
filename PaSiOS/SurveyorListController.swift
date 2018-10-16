@@ -26,4 +26,13 @@ class SurveyorListController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showDetails", sender: surveyors[indexPath.row])
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? DetailsController {
+            vc.surveyor = sender as? Surveyor
+        } else if let vc = segue.destination as? SinglePortMapController {
+            vc.port = self.port
+        }
+    }
+    
 }
