@@ -4,6 +4,15 @@ class SurveyorListController: UITableViewController {
     var port: Port!
     var surveyors: [Surveyor] = []
     
+    var showMapButton = true
+    
+    override func viewDidLoad() {
+        if !showMapButton {
+            navigationItem.rightBarButtonItems = []
+        }
+        title = port.name
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
