@@ -98,3 +98,9 @@ extension PortsListViewController : UISearchResultsUpdating {
         tableView.reloadData()
     }
 }
+
+extension PortsListViewController : UISearchBarDelegate {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.text = searchText
+    }
+}
