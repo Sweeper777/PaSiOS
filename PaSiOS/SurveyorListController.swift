@@ -44,4 +44,7 @@ class SurveyorListController: UITableViewController {
         }
     }
     
+    @IBAction func showMap() {
+        performSegue(withIdentifier: "showMap", sender: nil)
+    }
 }
