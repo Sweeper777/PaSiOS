@@ -17,6 +17,8 @@ class PortsListViewController: UITableViewController {
     
     var filteredPorts: [Port] = []
     
+    var searchText = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchResultsUpdater = self
@@ -89,6 +91,7 @@ class PortsListViewController: UITableViewController {
 
 extension PortsListViewController : UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
+        searchText = searchController.searchBar.text ?? ""
         if searchController.searchBar.text != "" && searchController.searchBar.text != nil {
             filteredPorts = ports.filter { $0.name.lowercased().contains(searchController.searchBar.text!.lowercased()) }
         }
