@@ -24,6 +24,7 @@ class PortsListViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search"
         searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
         
         if #available(iOS 11.0, *) {
             self.navigationItem.searchController = searchController
