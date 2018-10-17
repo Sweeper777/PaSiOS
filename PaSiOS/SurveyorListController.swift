@@ -1,7 +1,7 @@
 import UIKit
 
 class SurveyorListController: UITableViewController {
-    var portName: String!
+    var port: Port!
     var surveyors: [Surveyor] = []
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -9,7 +9,7 @@ class SurveyorListController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "surveyors for port '\(portName!)'"
+        return "surveyors for port '\(port.name)'"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
