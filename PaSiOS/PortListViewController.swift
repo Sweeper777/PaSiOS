@@ -82,9 +82,9 @@ class PortsListViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? SurveyorListController,
-            let portName = (sender as? Port)?.name,
+            let port = sender as? Port,
             let surveyorIndices = (sender as? Port)?.surveyors {
-            vc.portName = portName
+            vc.port = port
             vc.surveyors = surveyorIndices.compactMap { data.surveyorsDictionary[$0] }
         }
     }
