@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		41888F1542433E379D8FFCFE /* Pods_PaSiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2345A9B775663252465CD52 /* Pods_PaSiOS.framework */; };
+		5A37FC8021736C8A00582908 /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A37FC7F21736C8A00582908 /* DetailsController.swift */; };
+		5A37FC822173938600582908 /* SinglePortMapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A37FC812173938600582908 /* SinglePortMapController.swift */; };
+		5A3B043E217232F5005B65A6 /* SurveyorListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3B043D217232F5005B65A6 /* SurveyorListController.swift */; };
 		5A433E6D2160E1B200F10F67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A433E6C2160E1B200F10F67 /* AppDelegate.swift */; };
 		5A433E6F2160E1B200F10F67 /* PortListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A433E6E2160E1B200F10F67 /* PortListViewController.swift */; };
 		5A433E722160E1B200F10F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A433E702160E1B200F10F67 /* Main.storyboard */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A37FC7F21736C8A00582908 /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
+		5A37FC812173938600582908 /* SinglePortMapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePortMapController.swift; sourceTree = "<group>"; };
+		5A3B043D217232F5005B65A6 /* SurveyorListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyorListController.swift; sourceTree = "<group>"; };
 		5A433E692160E1B200F10F67 /* PaSiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaSiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A433E6C2160E1B200F10F67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A433E6E2160E1B200F10F67 /* PortListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortListViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +78,9 @@
 				5A433E6C2160E1B200F10F67 /* AppDelegate.swift */,
 				5A433E6E2160E1B200F10F67 /* PortListViewController.swift */,
 				5A436A3D216901DB005F5067 /* MapViewController.swift */,
+				5A3B043D217232F5005B65A6 /* SurveyorListController.swift */,
+				5A37FC7F21736C8A00582908 /* DetailsController.swift */,
+				5A37FC812173938600582908 /* SinglePortMapController.swift */,
 				5A433E702160E1B200F10F67 /* Main.storyboard */,
 				5A433E7E2160E50F00F10F67 /* Model.swift */,
 				5A436A3F2169026C005F5067 /* Utils.swift */,
@@ -253,8 +262,11 @@
 				5A433E6F2160E1B200F10F67 /* PortListViewController.swift in Sources */,
 				5A436A3C2168B260005F5067 /* SecretStuff.swift in Sources */,
 				5A436A3E216901DB005F5067 /* MapViewController.swift in Sources */,
+				5A37FC8021736C8A00582908 /* DetailsController.swift in Sources */,
 				5A433E6D2160E1B200F10F67 /* AppDelegate.swift in Sources */,
 				5A436A402169026C005F5067 /* Utils.swift in Sources */,
+				5A3B043E217232F5005B65A6 /* SurveyorListController.swift in Sources */,
+				5A37FC822173938600582908 /* SinglePortMapController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
