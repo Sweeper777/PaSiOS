@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import SCLAlertView
+import EZLoadingActivity
 
 class PortsListViewController: UITableViewController {
 
@@ -40,15 +41,22 @@ class PortsListViewController: UITableViewController {
         if let data = loadCache() {
             self.data = data
         } else {
-            downloadData { [unowned self] (data) in
-                if let pasData = data {
-                    self.data = pasData
-                    self.tableView.reloadData()
-                } else {
-                    let alert = SCLAlertView()
-                    alert.showError("Error", subTitle: "Unable to load data.")
-                }
+            loadWebData()
+        }
+    }
+    
+    func loadWebData() {
+        EZLoadingActivity.show("Loading...", disableUI: true)
+        downloadData { [unowned self] (data) in
+            if let pasData = data {
+                self.data = pasData
+                self.tableView.reloadData()
+            } else {
+                let alert = SCLAlertView()
+                alert.showError("Error", subTitle: "Unable to load data.")
             }
+            
+            EZLoadingActivity.hide()
         }
     }
     
