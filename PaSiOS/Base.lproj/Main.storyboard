@@ -42,7 +42,13 @@
                             <outlet property="delegate" destination="WlB-pR-48F" id="bM0-Iu-Ltd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ports" id="rfB-XK-aSb"/>
+                    <navigationItem key="navigationItem" title="Ports" id="rfB-XK-aSb">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-synchronize_filled" id="r39-lI-MKn">
+                            <connections>
+                                <action selector="refresh" destination="WlB-pR-48F" id="awT-xL-b2F"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="AM0-CU-SB3" kind="show" identifier="showSurveyors" id="bOh-hT-WTU"/>
                     </connections>
@@ -83,7 +89,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="PI7-gS-SfV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Map" id="MzQ-cb-XDY"/>
+                    <navigationItem key="navigationItem" title="Map" id="MzQ-cb-XDY">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="icons8-synchronize_filled" id="pK1-Jh-Rjr">
+                            <connections>
+                                <action selector="refresh" destination="Hgm-54-qBc" id="r6U-tb-7c3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="AM0-CU-SB3" kind="show" identifier="showSurveyors" id="hhC-cw-yj2"/>
                     </connections>
@@ -280,6 +292,7 @@
     <resources>
         <image name="icons8-list" width="25" height="25"/>
         <image name="icons8-list_filled" width="25" height="25"/>
+        <image name="icons8-synchronize_filled" width="25" height="25"/>
         <image name="icons8-world_map" width="25" height="25"/>
         <image name="icons8-world_map_filled" width="25" height="25"/>
     </resources>
