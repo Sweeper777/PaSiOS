@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "45AD320B29F23E28D44F4CA44648182D"
-               BlueprintName = "SwiftyUtils"
+               BlueprintIdentifier = "7B6752FBC12267FFE2CFEE4AF13EB336"
+               BlueprintName = "EZLoadingActivity"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SwiftyUtils.framework">
+               BuildableName = "EZLoadingActivity.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

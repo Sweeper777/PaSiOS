@@ -10,4 +10,5 @@ target 'PaSiOS' do
   pod 'CrossroadRegex'
   pod 'SCLAlertView'
   pod 'SwiftyUtils', :git => 'https://github.com/tbaranes/SwiftyUtils.git', :commit => '982bffaadf8e831e75d3444dfba56af4d3962224'
+  pod 'EZLoadingActivity', :git => 'https://github.com/hons82/EZLoadingActivity.git'
 end
