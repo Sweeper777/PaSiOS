@@ -1,6 +1,7 @@
 import UIKit
 import GoogleMaps
 import SCLAlertView
+import EZLoadingActivity
 
 class MapViewController: UIViewController, GMSMapViewDelegate {
     var mapView: GMSMapView!
@@ -34,15 +35,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             self.data = data
             reloadMarkers()
         } else {
-            downloadData { [unowned self] (data) in
-                if let pasData = data {
-                    self.data = pasData
-                    self.reloadMarkers()
-                } else {
-                    let alert = SCLAlertView()
-                    alert.showError("Error", subTitle: "Unable to load data.")
-                }
-            }
+            loadWebData()
         }
         
         searchController.searchBar.barStyle = .black
@@ -56,6 +49,20 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         searchController.searchBar.tintColor = .white
         
         searchController.searchResultsUpdater = self
+    }
+    
+    func loadWebData() {
+        EZLoadingActivity.show("Loading...", disableUI: true)
+        downloadData { [unowned self] (data) in
+            if let pasData = data {
+                self.data = pasData
+                self.reloadMarkers()
+            } else {
+                let alert = SCLAlertView()
+                alert.showError("Error", subTitle: "Unable to load data.")
+            }
+            EZLoadingActivity.hide()
+        }
     }
     
     func reloadMarkers(searchLocation: CLLocationCoordinate2D? = nil) {
