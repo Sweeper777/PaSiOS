@@ -104,6 +104,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             vc.showMapButton = false
         }
     }
+    
+    @IBAction func refresh() {
+        loadWebData()
+    }
 }
 
 
