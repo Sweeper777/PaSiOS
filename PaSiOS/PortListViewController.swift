@@ -96,6 +96,10 @@ class PortsListViewController: UITableViewController {
             vc.surveyors = surveyorIndices.compactMap { data.surveyorsDictionary[$0] }
         }
     }
+    
+    @IBAction func refresh() {
+        loadWebData()
+    }
 }
 
 extension PortsListViewController : UISearchResultsUpdating {
