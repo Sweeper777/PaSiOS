@@ -85,6 +85,7 @@ class PortsListViewController: UITableViewController {
         } else {
             performSegue(withIdentifier: "showSurveyors", sender: ports[indexPath.row])
         }
+        searchController.isActive = false
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
