@@ -80,7 +80,7 @@ class PortsListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if searchController.searchBar.text != "" && searchController.searchBar.text != nil {
+        if searchText != "" {
             performSegue(withIdentifier: "showSurveyors", sender: filteredPorts[indexPath.row])
         } else {
             performSegue(withIdentifier: "showSurveyors", sender: ports[indexPath.row])
