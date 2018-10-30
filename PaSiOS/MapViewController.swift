@@ -51,6 +51,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         searchController.searchResultsUpdater = self
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(searchController.searchBar.text)
+    }
+    
     func loadWebData() {
         EZLoadingActivity.show("Loading...", disableUI: true)
         downloadData { [unowned self] (data) in
