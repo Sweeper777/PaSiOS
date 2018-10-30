@@ -92,7 +92,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         guard marker.title != "Searched Location" else { return }
         if let index = markers.firstIndex(of: marker) {
             searchController.isActive = false
-            performSegue(withIdentifier: "showSurveyors", sender: ports[index])
+            if searchText != "" {
+                performSegue(withIdentifier: "showSurveyors", sender: filteredPorts[index])
+            } else {
+                performSegue(withIdentifier: "showSurveyors", sender: ports[index])
+            }
         }
     }
     
